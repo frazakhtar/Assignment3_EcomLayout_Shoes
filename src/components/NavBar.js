@@ -4,7 +4,7 @@ import { AppBar, List, ListItem, ListItemButton, ListItemText, Toolbar, Typograp
 const NavBar = () => {
 const navItems = ['Home', 'About', 'Contact'];
   return (
-    <AppBar style={{ backgroundColor: "#154D71" }}>
+    <AppBar position="static" style={{ backgroundColor: "#154D71" }}>
       <Toolbar>
         <Typography>Logo</Typography>
          <Box sx={{ ml: "auto" }} />

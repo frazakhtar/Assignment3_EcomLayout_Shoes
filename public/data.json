@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "name": "AirRunner Pro",
+    "brand": "SpeedMax",
+    "price": 79.99,
+    "image_url": "https://via.assets.so/shoe.png?id=1&w=360&h=360&fit=fill"
+  },
+  {
+    "id": 2,
+    "name": "UrbanSlide",
+    "brand": "CityWalk",
+    "price": 49.99,
+    "image_url": "https://via.assets.so/shoe.png?id=2&w=360&h=360&fit=fill"
+  },
+  {
+    "id": 3,
+    "name": "TrailBlazer X",
+    "brand": "MountainGo",
+    "price": 99.99,
+    "image_url": "https://via.assets.so/shoe.png?id=3&w=360&h=360&fit=fill"
+  },
+  {
+    "id": 4,
+    "name": "EliteRunner 3000",
+    "brand": "SprintZone",
+    "price": 119.99,
+    "image_url": "https://via.assets.so/shoe.png?id=4&w=360&h=360&fit=fill"
+  },
+  {
+    "id": 5,
+    "name": "Everyday Comfort",
+    "brand": "SoftStep",
+    "price": 59.99,
+    "image_url": "https://via.assets.so/shoe.png?id=5&w=360&h=360&fit=fill"
+  },
+  {
+    "id": 6,
+    "name": "StreetKing Canvas",
+    "brand": "UrbanEdge",
+    "price": 45.00,
+    "image_url": "https://via.assets.so/shoe.png?id=6&w=360&h=360&fit=fill"
+  },
+  {
+    "id": 7,
+    "name": "NightWalker",
+    "brand": "GlowMiles",
+    "price": 89.95,
+    "image_url": "https://via.assets.so/shoe.png?id=7&w=360&h=360&fit=fill"
+  },
+  {
+    "id": 8,
+    "name": "ComfortStride",
+    "brand": "StepEase",
+    "price": 69.50,
+    "image_url": "https://via.assets.so/shoe.png?id=8&w=360&h=360&fit=fill"
+  },
+  {
+    "id": 9,
+    "name": "PowerLift Pro",
+    "brand": "Lifter",
+    "price": 129.99,
+    "image_url": "https://via.assets.so/shoe.png?id=9&w=360&h=360&fit=fill"
+  },
+  {
+    "id": 10,
+    "name": "AquaRunner",
+    "brand": "WaterSport",
+    "price": 79.99,
+    "image_url": "https://via.assets.so/shoe.png?id=10&w=360&h=360&fit=fill"
+  },
+  {
+    "id": 11,
+    "name": "Desert Trekker",
+    "brand": "SandWander",
+    "price": 109.99,
+    "image_url": "https://via.assets.so/shoe.png?id=11&w=360&h=360&fit=fill"
+  },
+  {
+    "id": 12,
+    "name": "Classic Leather",
+    "brand": "HeritageWear",
+    "price": 99.00,
+    "image_url": "https://via.assets.so/shoe.png?id=12&w=360&h=360&fit=fill"
+  },
+  {
+    "id": 13,
+    "name": "SpeedWeave Racer",
+    "brand": "FiberFly",
+    "price": 139.99,
+    "image_url": "https://via.assets.so/shoe.png?id=13&w=360&h=360&fit=fill"
+  },
+  {
+    "id": 14,
+    "name": "EcoStep Recycled",
+    "brand": "GreenStride",
+    "price": 89.99,
+    "image_url": "https://via.assets.so/shoe.png?id=14&w=360&h=360&fit=fill"
+  },
+  {
+    "id": 15,
+    "name": "AdventureGrip",
+    "brand": "WildTrail",
+    "price": 119.50,
+    "image_url": "https://via.assets.so/shoe.png?id=15&w=360&h=360&fit=fill"
+  }
+]
