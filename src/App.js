@@ -1,25 +1,23 @@
-import { Grid, Paper } from "@mui/material";
 import NavBar from "./components/NavBar";
 import ShoesListing from "./components/ShoesListing";
 import CartComponent from "./components/CartComponent";
+import { useState } from "react";
 
 function App() {
+  const[cartItem,setCartItem]=useState([])
   return (
     <div className="App">
       <NavBar />
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={8}>
-          <Paper sx={{ p: 2 }}>
-            <ShoesListing />
-          </Paper>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Paper sx={{ p: 2 }}>
-            <CartComponent />
-          </Paper>
-        </Grid>
-      </Grid>
+      <div style={{display:"flex", width:"100vw", height:"100vh"}}>
+           <div style={{width: "65%"}}>
+                <ShoesListing setCartItem={setCartItem}/>
+          </div>
+          <div style={{width:"35%"}}>
+                <CartComponent cartItem={cartItem}/>
+          </div>
       </div>
+     
+    </div>
   );
 }
 
