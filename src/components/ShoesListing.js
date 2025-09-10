@@ -1,22 +1,13 @@
 import React, { useEffect, useState } from "react";
-import {
-  Card,
-  CardHeader,
-  CardContent,
-  CardMedia,
-  Typography,
-  Grid,
-  Button,
-  Box,
-  Paper,
-  AlertTitle,
-} from "@mui/material";
+import { Grid, Button, Paper } from "@mui/material";
 import "../index.css";
 const ShoesListing = ({ cartItem, setCartItem }) => {
   const [data, setData] = useState([]);
+
   useEffect(() => {
     getData();
   }, []);
+  
   const getData = async () => {
     const res = await fetch("/data.json");
     const result = await res.json();
@@ -26,14 +17,14 @@ const ShoesListing = ({ cartItem, setCartItem }) => {
   const handleAdd = (elem) => {
     const found = cartItem.find((item) => item.title === elem.name);
     if (found) {
-    setCartItem((prev) =>
-      prev.map((item) =>
-        item.title === elem.name
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      )
-    );
-  } else {
+      setCartItem((prev) =>
+        prev.map((item) =>
+          item.title === elem.name
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        )
+      );
+    } else {
       setCartItem((prev) => {
         return [
           ...prev,
@@ -41,7 +32,7 @@ const ShoesListing = ({ cartItem, setCartItem }) => {
             title: elem.name,
             price: elem.price,
             image: elem.image_url,
-            quantity: 1
+            quantity: 1,
           },
         ];
       });
@@ -58,12 +49,18 @@ const ShoesListing = ({ cartItem, setCartItem }) => {
                   src={elem.image_url}
                   style={{ height: "10rem", width: "10rem" }}
                 />
-                <br />
-                {elem.name}
-                <br />
-                {elem.price}
-                <br />
-                <Button variant="contained" onClick={() => handleAdd(elem)}>
+                <div style={{ fontSize: "20px" }}>{elem.name}</div>
+                <div
+                  style={{ margin: "2px", padding: "2px", fontWeight: "bold" }}
+                >
+                  {elem.price}
+                  {`$`}
+                </div>
+                <Button
+                  sx={{ margin: "10px" }}
+                  variant="contained"
+                  onClick={() => handleAdd(elem)}
+                >
                   Add to cart
                 </Button>
               </Paper>
