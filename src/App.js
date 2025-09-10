@@ -13,7 +13,7 @@ function App() {
                 <ShoesListing setCartItem={setCartItem}/>
           </div>
           <div style={{width:"35%"}}>
-                <CartComponent cartItem={cartItem}/>
+                <CartComponent cartItem={cartItem} setCartItem={setCartItem}/>
           </div>
       </div>
      
