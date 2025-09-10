@@ -1,22 +1,44 @@
 import { Button, Paper, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 
-const CartComponent = ({ cartItem, setCartItem }) => {
-  const [count, setCount] = useState(1);
-  const handleAddClick = () => {
-    setCount(count + 1);
+const CartComponent = ({ cartItem, setCartItem}) => {
+  useEffect(()=>{
+  },[cartItem])
+  const handleMinusClick=(elem)=>{
+     setCartItem(prev =>
+      prev.reduce((acc, item) => {
+        if (item.title === elem.title) {
+          if ((item.quantity || 0) > 1) {
+            acc.push({ ...item, quantity: item.quantity - 1 });
+          }
+        } else {
+          acc.push(item);
+        }
+        return acc;
+      }, [])
+    );
+  };
+  const handleAddClick = (elem) => {
+     setCartItem((prev) =>
+      prev.map((item) =>
+        item.name === elem.name
+          ? { ...item, quantity: (item.quantity||0) + 1 }
+          : item
+      )
+    );
   };
   return (
     <Paper sx={{ p: 2, backgroundColor: "transparent" }}>
       <Typography>Cart</Typography>
       {cartItem.length >= 1 ? (
-        cartItem.map((elem) => {
+        cartItem.map((elem, index) => {
           return (
-            <Paper sx={{ p: 2, m: 5, display: "flex" }}>
+            <Paper key={index} sx={{ p: 2, m: 5, display: "flex" }}>
               <img src={elem.image} style={{ height: "5rem", width: "5rem" }} />
               <div style={{ padding: "10px" }}>{elem.title}</div>
               <div style={{ padding: "10px" }}>{elem.price}</div>
               <Button
+                onClick={()=>handleMinusClick(elem)}
                 variant="contained"
                 sx={{
                   minWidth: 0,
@@ -27,9 +49,9 @@ const CartComponent = ({ cartItem, setCartItem }) => {
               >
                 -
               </Button>
-             <div style={{margin:'10px'}}>{count}</div> 
+             <div style={{margin:'10px'}}>{cartItem[index].quantity}</div> 
               <Button
-                onClick={handleAddClick}
+                onClick={()=>handleAddClick(elem)}
                 variant="contained"
                 sx={{
                   minWidth: 0,
