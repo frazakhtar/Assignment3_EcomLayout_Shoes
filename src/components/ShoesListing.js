@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { CartContext } from "../Contexts/CartContext";
 import { Grid, Button, Paper } from "@mui/material";
 import "../index.css";
-const ShoesListing = ({ cartItem, setCartItem }) => {
+const ShoesListing = () => {
+    const { cartItem, setCartItem } = useContext(CartContext)
   const [data, setData] = useState([]);
-
   useEffect(() => {
     getData();
   }, []);

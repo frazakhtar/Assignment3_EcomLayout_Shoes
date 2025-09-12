@@ -1,9 +1,10 @@
 import { Box, Button, Paper, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import { CartContext } from "../Contexts/CartContext";
+import React, { useContext, useEffect, useState } from "react";
 
-const CartComponent = ({ cartItem, setCartItem }) => {
+const CartComponent = () => {
   const [cartTotal, setCartTotal] = useState(0);
-
+  const { cartItem, setCartItem } = useContext(CartContext)
   useEffect(() => {
     handleCartTotal();
   }, [cartItem]);
