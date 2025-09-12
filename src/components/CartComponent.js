@@ -1,4 +1,4 @@
-import { Button, Paper, Typography } from "@mui/material";
+import { Box, Button, Paper, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 
 const CartComponent = ({ cartItem, setCartItem }) => {
@@ -7,11 +7,12 @@ const CartComponent = ({ cartItem, setCartItem }) => {
   useEffect(() => {
     handleCartTotal();
   }, [cartItem]);
+
   const handleCartTotal = () => {
     const total = cartItem.reduce((acc, cur) => {
       return acc + cur.price * (cur.quantity || 1);
     }, 0);
-    setCartTotal(total);
+    setCartTotal(total.toFixed(2));
   };
   const handleMinusClick = (elem) => {
     setCartItem((prev) =>
@@ -39,49 +40,84 @@ const CartComponent = ({ cartItem, setCartItem }) => {
   };
 
   return (
-    <Paper sx={{ p: 2, backgroundColor: "transparent" }}>
-      <Typography sx={{ p: 1, m: 1, fontSize: "20px", fontWeight: "bold" }}>
-        Cart - {`${cartTotal} $`}
-      </Typography>
-      {cartItem.length >= 1 ? (
-        cartItem.map((elem, index) => {
-          return (
-            <Paper key={index} sx={{ p: 2, m: 5, display: "flex" }}>
-              <img src={elem.image} style={{ height: "5rem", width: "5rem" }} />
-              <div style={{ padding: "10px" }}>{elem.title}</div>
-              <div style={{ padding: "10px" }}>{elem.price}</div>
-              <Button
-                onClick={() => handleMinusClick(elem)}
-                variant="contained"
+    <Box
+      sx={{
+        width: "100%",
+        px: { xs: 1, sm: 2 },
+        boxSizing: "border-box",
+      }}
+    >
+      <Paper
+        className="cartPaper"
+        sx={{
+          p: 2,
+          backgroundColor: "transparent",
+          width: "100%",
+        }}
+      >
+       
+        {cartItem.length >= 1 ? (
+          cartItem.map((elem, index) => {
+            return (
+              <Paper
+                className="paperUnderCart"
+                key={index}
                 sx={{
-                  minWidth: 0,
-                  padding: "4px 8px",
-                  margin: "10px",
-                  height: "20px",
+                  p: 2,
+                  m: 1,
+                  display: "flex",
+                  flexDirection: { xs: "column", sm: "row" },
+                  alignItems: { xs: "center", sm: "center" },
+                  width: "100%",
+                  boxSizing: "border-box",
                 }}
               >
-                -
-              </Button>
-              <div style={{ margin: "10px" }}>{cartItem[index].quantity}</div>
-              <Button
-                onClick={() => handleAddClick(elem)}
-                variant="contained"
-                sx={{
-                  minWidth: 0,
-                  padding: "4px 8px",
-                  margin: "10px",
-                  height: "20px",
-                }}
-              >
-                +
-              </Button>
-            </Paper>
-          );
-        })
-      ) : (
-        <p>Your Cart Is Empty!!!</p>
-      )}
-    </Paper>
+                <img
+                  src={elem.image}
+                  style={{ height: "5rem", width: "5rem" }}
+                />
+                <div style={{ padding: "10px" }}>{elem.title}</div>
+                <div style={{ padding: "10px" }}>{elem.price}</div>
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <Button
+                    onClick={() => handleMinusClick(elem)}
+                    variant="contained"
+                    sx={{
+                      minWidth: 0,
+                      padding: "4px 8px",
+                      margin: "10px",
+                      height: "20px",
+                    }}
+                  >
+                    -
+                  </Button>
+                  <div style={{ margin: "10px" }}>
+                    {elem.quantity || 1}
+                  </div>
+                  <Button
+                    onClick={() => handleAddClick(elem)}
+                    variant="contained"
+                    sx={{
+                      minWidth: 0,
+                      padding: "4px 8px",
+                      margin: "10px",
+                      height: "20px",
+                    }}
+                  >
+                    +
+                  </Button>
+                </Box>
+              </Paper>
+            );
+          })
+        ) : (
+          <p>Your Cart Is Empty!!!</p>
+        )}
+          <Typography sx={{ p: 1, m: 1, fontSize: "20px", fontWeight: "bold" }}>
+          Cart - {`${cartTotal} $`}
+        </Typography>
+      </Paper>
+    </Box>
   );
 };
 

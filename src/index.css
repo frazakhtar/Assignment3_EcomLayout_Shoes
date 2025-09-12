@@ -8,3 +8,56 @@ body {
   background-color: #a7d4f2;
   overflow-x: hidden;
 }
+
+.listingHeading{
+  font-size: 2rem;
+  font-weight: bolder;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.container{
+  display: flex;
+  flex-wrap: nowrap;
+}
+.cart{
+  margin-right: 20px;
+}
+
+@media (max-width: 820px) {
+  .container {
+    flex-direction: column-reverse; 
+    align-items: stretch;   
+  }
+  .cart {
+    width: 90%;             
+    margin: 20px;    
+    margin-top: 2rem;   
+    box-sizing: border-box; 
+  }
+  
+}
+
+@media (max-width: 480px) {
+    .container {
+    flex-direction: column-reverse;  
+    align-items: stretch;  
+  }
+    .cart {
+    width: 85%;          
+    margin: 10px; 
+    margin-top: 2rem;       
+  }
+  .cartPaper{
+    max-width: 30rem;
+    
+  }
+ 
+  .gridContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

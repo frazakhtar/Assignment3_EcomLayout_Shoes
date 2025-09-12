@@ -1,3 +1,4 @@
+import "./index.css"
 import NavBar from "./components/NavBar";
 import ShoesListing from "./components/ShoesListing";
 import CartComponent from "./components/CartComponent";
@@ -8,16 +9,17 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <div style={{ display: "flex", width: "100vw", height: "100vh" }}>
-        <div style={{ width: "65%" }}>
+      <div className="container">
+        <div className="listing">
           <ShoesListing cartItem={cartItem} setCartItem={setCartItem} />
         </div>
-        <div style={{ width: "35%" }}>
+        <div className="cart">
           <CartComponent
             cartItem={cartItem}
             setCartItem={setCartItem}
           />
         </div>
+     
       </div>
     </div>
   );

@@ -39,7 +39,9 @@ const ShoesListing = ({ cartItem, setCartItem }) => {
     }
   };
   return (
-    <Grid container>
+    <>
+    <div className="listingHeading">Available Products</div>
+    <Grid className="gridContainer" container>
       {data &&
         data.map((elem) => {
           return (
@@ -68,6 +70,7 @@ const ShoesListing = ({ cartItem, setCartItem }) => {
           );
         })}
     </Grid>
+        </>
   );
 };
 
