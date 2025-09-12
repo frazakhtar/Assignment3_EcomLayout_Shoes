@@ -1,6 +1,6 @@
 # Netlify deployed url of this application
 
-https://dynamic-trifle-39977b.netlify.app/
+https://aesthetic-frangipane-28460a.netlify.app/
 
 ## Available Scripts
 
