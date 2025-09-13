@@ -1,6 +1,6 @@
 # Netlify deployed url of this application
 
-https://aesthetic-frangipane-28460a.netlify.app/
+https://shimmering-meringue-987409.netlify.app/
 
 ## Available Scripts
 
