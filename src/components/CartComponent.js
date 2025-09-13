@@ -41,33 +41,35 @@ const CartComponent = () => {
   };
 
   return (
-    <Box
-      sx={{
-        width: "100%",
-        px: { xs: 1, sm: 2 },
-        boxSizing: "border-box",
-      }}
-    >
+      <>
+      <h2 style={{display: "flex", alignItems:"center", justifyContent:"center"}}>Cart</h2>
       <Paper
-        className="cartPaper"
+        elevation={24}
+        className="paperUnderCart"
         sx={{
-          p: 2,
+          p:2,
+          m:2,
+          mt:4,
+          border: "2px solid white",
           backgroundColor: "transparent",
-          width: "100%",
         }}
       >
+      {
+        cartItem.length>0? <Button sx={{ display: 'flex', float: "right",mt:0,mb:1}} variant="contained" onClick={()=>setCartItem([])}>Empty Cart</Button>:""
+      }
        
         {cartItem.length >= 1 ? (
           cartItem.map((elem, index) => {
             return (
               <Paper
-                className="paperUnderCart"
+                elevation={24}
                 key={index}
                 sx={{
                   p: 2,
-                  m: 1,
+                  mt:2,
                   display: "flex",
                   flexDirection: { xs: "column", sm: "row" },
+                  justifyContent:"space-between",
                   alignItems: { xs: "center", sm: "center" },
                   width: "100%",
                   boxSizing: "border-box",
@@ -115,10 +117,10 @@ const CartComponent = () => {
           <p>Your Cart Is Empty!!!</p>
         )}
           <Typography sx={{ p: 1, m: 1, fontSize: "20px", fontWeight: "bold" }}>
-          Cart - {`${cartTotal} $`}
+          Cart Total - {`${cartTotal} $`}
         </Typography>
       </Paper>
-    </Box>
+    </>
   );
 };
 
