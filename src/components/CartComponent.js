@@ -51,7 +51,7 @@ const CartComponent = () => {
           m:2,
           mt:4,
           border: "2px solid white",
-          backgroundColor: "transparent",
+          borderRadius: "16px"
         }}
       >
       {
@@ -73,6 +73,8 @@ const CartComponent = () => {
                   alignItems: { xs: "center", sm: "center" },
                   width: "100%",
                   boxSizing: "border-box",
+                  border: "2px solid black",
+                  borderRadius: "8px"
                 }}
               >
                 <img

@@ -35,7 +35,7 @@ html, body {
   flex-wrap: nowrap;
 }
 .listing{
-  max-width: 70%;
+  max-width: 61%;
 }
 
 @media (max-width: 820px) {

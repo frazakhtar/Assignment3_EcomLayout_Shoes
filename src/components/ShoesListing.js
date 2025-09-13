@@ -66,7 +66,7 @@ const ShoesListing = () => {
           data.map((elem, i) => {
             return (
               <Grid xs={12} sm={12} md={6} item key={elem.id}>
-                <Paper elevation={24} sx={{ p: 4, m: 2 }}>
+                <Paper elevation={24} sx={{ p: 4, m: 2, borderRadius:"8px" }}>
                   <img
                     src={elem.image_url}
                     style={{ height: "10rem", width: "10rem" }}
